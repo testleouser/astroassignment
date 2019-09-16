@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20190915 22:50:10.853" rpa="false">
+<suite id="s1" name="001 Testcase" source="C:\Users\ramesh.jagannathan\Desktop\ASTRO\web-assignment\TestCases\001_testcase.robot">
+<test id="s1-t1" name="TC02- launch ebay and search for iPhone8">
+<kw name="Test Case Setup" library="001-basicsetting" type="setup">
+<arguments>
+<arg>${platform}</arg>
+<arg>${env}</arg>
+<arg>${school_name}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:11.182" endtime="20190915 22:50:11.186"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${platform}'=='windows'</arg>
+<arg>Setup Windows</arg>
+</arguments>
+<kw name="Setup Windows" library="001-basicsetting">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${remote_url}'=='None'</arg>
+<arg>Launch Chrome Without Bar</arg>
+<arg>ELSE</arg>
+<arg>Open Browser</arg>
+<arg>${blank_page}</arg>
+<arg>${browser}</arg>
+<arg>${alias}</arg>
+<arg>${remote_url}</arg>
+</arguments>
+<kw name="Launch Chrome Without Bar" library="001-basicsetting">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20190915 22:50:11.186" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x04384450&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:11.186"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>credentials_enable_service=${false}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20190915 22:50:11.186" level="INFO">${prefs} = {'credentials_enable_service': False}</msg>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:11.186"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:11.186"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:11.186"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:11.190" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:13.881"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:13.885"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:13.885"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${remote_url}'=='None'</arg>
+<arg>Maximize Browser Window</arg>
+<arg>ELSE</arg>
+<arg>Set Window Size</arg>
+<arg>1400</arg>
+<arg>900</arg>
+</arguments>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190915 22:50:13.885" endtime="20190915 22:50:15.043"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:13.885" endtime="20190915 22:50:15.043"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:15.043"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:11.186" endtime="20190915 22:50:15.043"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${platform}'=='linux'</arg>
+<arg>Setup Linux</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:15.043" endtime="20190915 22:50:15.047"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${platform}'=='mac'</arg>
+<arg>Setup Mac</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:15.047" endtime="20190915 22:50:15.047"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${env}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:15.047" level="INFO">${env} = iot</msg>
+<status status="PASS" starttime="20190915 22:50:15.047" endtime="20190915 22:50:15.047"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${school_name}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:15.047" level="INFO">${school_name} = School Dashboard</msg>
+<status status="PASS" starttime="20190915 22:50:15.047" endtime="20190915 22:50:15.047"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:11.182" endtime="20190915 22:50:15.047"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ebay_url}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:15.051" level="INFO">Opening url 'https://www.ebay.com.my'</msg>
+<status status="PASS" starttime="20190915 22:50:15.051" endtime="20190915 22:50:26.129"></status>
+</kw>
+<kw name="input search text">
+<arguments>
+<arg>${ebay_search_box}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${search_box}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_box}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:26.133" endtime="20190915 22:50:26.193"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:26.133" endtime="20190915 22:50:26.193"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Input Text</arg>
+<arg>${search_box}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:26.193" level="INFO">Typing text 'iPhone8 64GB' into text field '//*[@id="gh-ac"]'.</msg>
+<status status="PASS" starttime="20190915 22:50:26.193" endtime="20190915 22:50:26.429"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:26.193" endtime="20190915 22:50:26.429"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:26.133" endtime="20190915 22:50:26.429"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Deprecated use `Press Keys` instead.</doc>
+<arguments>
+<arg>//*[@id="gh-btn"]</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:26.429" endtime="20190915 22:50:39.336"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//h3/a[contains(text(),"iPhone 8 64GB")]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//h3/a[contains(text(),"iPhone 8 64GB")]</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.340" endtime="20190915 22:50:39.388"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.340" endtime="20190915 22:50:39.388"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>//h3/a[contains(text(),"iPhone 8 64GB")]</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.400" level="INFO">${count} = 10</msg>
+<status status="PASS" starttime="20190915 22:50:39.388" endtime="20190915 22:50:39.400"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"]</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.452" level="INFO">${value} = RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.404" endtime="20190915 22:50:39.452"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${value}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.452" level="INFO">${str} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.452" endtime="20190915 22:50:39.452"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.456" level="INFO">${string} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.452" endtime="20190915 22:50:39.456"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.460" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.456" endtime="20190915 22:50:39.460"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.464" level="INFO">${int_value} = 1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.464" endtime="20190915 22:50:39.464"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Count Number Of iphone 8 on the Page</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.464" endtime="20190915 22:50:39.464"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>//h3/a[contains(text(),"iPhone 8 64GB")]</arg>
+</arguments>
+<assign>
+<var>${AlliphoneCount}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.480" level="INFO">${AlliphoneCount} = 10</msg>
+<status status="PASS" starttime="20190915 22:50:39.464" endtime="20190915 22:50:39.480"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Log links count</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.480" endtime="20190915 22:50:39.480"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${AlliphoneCount}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.480" level="INFO">10</msg>
+<status status="PASS" starttime="20190915 22:50:39.480" endtime="20190915 22:50:39.480"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create a list to store iphone prices</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.480" endtime="20190915 22:50:39.480"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{iphoneItems}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.480" level="INFO">@{iphoneItems} = [ ]</msg>
+<status status="PASS" starttime="20190915 22:50:39.480" endtime="20190915 22:50:39.480"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Loop through all the iphone and store price value</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.484" endtime="20190915 22:50:39.484"></status>
+</kw>
+<kw name="${INDEX} IN RANGE [ 1 | ${AlliphoneCount} ]" type="for">
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.484" level="INFO">1</msg>
+<status status="PASS" starttime="20190915 22:50:39.484" endtime="20190915 22:50:39.484"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.520" level="INFO">${lintext} = RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.484" endtime="20190915 22:50:39.520"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.520" level="INFO">RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.520" endtime="20190915 22:50:39.520"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.520" level="INFO">${str} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.520" endtime="20190915 22:50:39.520"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.520" level="INFO">${string} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.520" endtime="20190915 22:50:39.520"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.524" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.520" endtime="20190915 22:50:39.524"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.524" level="INFO">${int_value} = 1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.524" endtime="20190915 22:50:39.524"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.524" endtime="20190915 22:50:39.524"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.484" endtime="20190915 22:50:39.524"></status>
+</kw>
+<kw name="${INDEX} = 2" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.524" level="INFO">2</msg>
+<status status="PASS" starttime="20190915 22:50:39.524" endtime="20190915 22:50:39.524"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.572" level="INFO">${lintext} = RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.524" endtime="20190915 22:50:39.572"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.572" level="INFO">RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.572" endtime="20190915 22:50:39.572"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.576" level="INFO">${str} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.572" endtime="20190915 22:50:39.576"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.576" level="INFO">${string} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.576" endtime="20190915 22:50:39.576"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.576" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.576" endtime="20190915 22:50:39.576"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.576" level="INFO">${int_value} = 1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.576" endtime="20190915 22:50:39.576"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.576" endtime="20190915 22:50:39.576"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.524" endtime="20190915 22:50:39.576"></status>
+</kw>
+<kw name="${INDEX} = 3" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.580" level="INFO">3</msg>
+<status status="PASS" starttime="20190915 22:50:39.580" endtime="20190915 22:50:39.580"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.625" level="INFO">${lintext} = RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.580" endtime="20190915 22:50:39.625"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.625" level="INFO">RM 1,657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.625" endtime="20190915 22:50:39.625"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.625" level="INFO">${str} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.625" endtime="20190915 22:50:39.625"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.625" level="INFO">${string} =  1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.625" endtime="20190915 22:50:39.625"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.629" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.625" endtime="20190915 22:50:39.629"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.629" level="INFO">${int_value} = 1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.629" endtime="20190915 22:50:39.629"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.629" endtime="20190915 22:50:39.629"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.576" endtime="20190915 22:50:39.629"></status>
+</kw>
+<kw name="${INDEX} = 4" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.629" level="INFO">4</msg>
+<status status="PASS" starttime="20190915 22:50:39.629" endtime="20190915 22:50:39.629"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.673" level="INFO">${lintext} = RM 1,703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.629" endtime="20190915 22:50:39.673"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.673" level="INFO">RM 1,703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.673" endtime="20190915 22:50:39.677"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.677" level="INFO">${str} =  1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.677" endtime="20190915 22:50:39.677"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.677" level="INFO">${string} =  1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.677" endtime="20190915 22:50:39.677"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.677" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.677" endtime="20190915 22:50:39.677"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.677" level="INFO">${int_value} = 1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.677" endtime="20190915 22:50:39.677"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.677" endtime="20190915 22:50:39.677"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.629" endtime="20190915 22:50:39.677"></status>
+</kw>
+<kw name="${INDEX} = 5" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.681" level="INFO">5</msg>
+<status status="PASS" starttime="20190915 22:50:39.681" endtime="20190915 22:50:39.681"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.729" level="INFO">${lintext} = RM 1,729.51</msg>
+<status status="PASS" starttime="20190915 22:50:39.681" endtime="20190915 22:50:39.729"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.729" level="INFO">RM 1,729.51</msg>
+<status status="PASS" starttime="20190915 22:50:39.729" endtime="20190915 22:50:39.729"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.729" level="INFO">${str} =  1729.51</msg>
+<status status="PASS" starttime="20190915 22:50:39.729" endtime="20190915 22:50:39.729"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.729" level="INFO">${string} =  1729.51</msg>
+<status status="PASS" starttime="20190915 22:50:39.729" endtime="20190915 22:50:39.733"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.737" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.733" endtime="20190915 22:50:39.737"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.737" level="INFO">${int_value} = 1729.51</msg>
+<status status="PASS" starttime="20190915 22:50:39.737" endtime="20190915 22:50:39.737"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.737" endtime="20190915 22:50:39.737"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.677" endtime="20190915 22:50:39.737"></status>
+</kw>
+<kw name="${INDEX} = 6" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.737" level="INFO">6</msg>
+<status status="PASS" starttime="20190915 22:50:39.737" endtime="20190915 22:50:39.737"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.785" level="INFO">${lintext} = RM 1,809.14</msg>
+<status status="PASS" starttime="20190915 22:50:39.737" endtime="20190915 22:50:39.785"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.785" level="INFO">RM 1,809.14</msg>
+<status status="PASS" starttime="20190915 22:50:39.785" endtime="20190915 22:50:39.785"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.785" level="INFO">${str} =  1809.14</msg>
+<status status="PASS" starttime="20190915 22:50:39.785" endtime="20190915 22:50:39.785"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.785" level="INFO">${string} =  1809.14</msg>
+<status status="PASS" starttime="20190915 22:50:39.785" endtime="20190915 22:50:39.785"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.789" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.785" endtime="20190915 22:50:39.789"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.789" level="INFO">${int_value} = 1809.14</msg>
+<status status="PASS" starttime="20190915 22:50:39.789" endtime="20190915 22:50:39.789"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.789" endtime="20190915 22:50:39.789"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.737" endtime="20190915 22:50:39.789"></status>
+</kw>
+<kw name="${INDEX} = 7" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.789" level="INFO">7</msg>
+<status status="PASS" starttime="20190915 22:50:39.789" endtime="20190915 22:50:39.789"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.833" level="INFO">${lintext} = RM 1,452.53</msg>
+<status status="PASS" starttime="20190915 22:50:39.789" endtime="20190915 22:50:39.833"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.833" level="INFO">RM 1,452.53</msg>
+<status status="PASS" starttime="20190915 22:50:39.833" endtime="20190915 22:50:39.833"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.833" level="INFO">${str} =  1452.53</msg>
+<status status="PASS" starttime="20190915 22:50:39.833" endtime="20190915 22:50:39.833"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.837" level="INFO">${string} =  1452.53</msg>
+<status status="PASS" starttime="20190915 22:50:39.833" endtime="20190915 22:50:39.837"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.837" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.837" endtime="20190915 22:50:39.837"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.837" level="INFO">${int_value} = 1452.53</msg>
+<status status="PASS" starttime="20190915 22:50:39.837" endtime="20190915 22:50:39.837"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.837" endtime="20190915 22:50:39.837"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.789" endtime="20190915 22:50:39.837"></status>
+</kw>
+<kw name="${INDEX} = 8" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.837" level="INFO">8</msg>
+<status status="PASS" starttime="20190915 22:50:39.837" endtime="20190915 22:50:39.837"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.883" level="INFO">${lintext} = RM 1,703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.837" endtime="20190915 22:50:39.883"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.883" level="INFO">RM 1,703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.883" endtime="20190915 22:50:39.883"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.883" level="INFO">${str} =  1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.883" endtime="20190915 22:50:39.883"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.886" level="INFO">${string} =  1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.883" endtime="20190915 22:50:39.886"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.886" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.886" endtime="20190915 22:50:39.886"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.886" level="INFO">${int_value} = 1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.886" endtime="20190915 22:50:39.886"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.886" endtime="20190915 22:50:39.886"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.837" endtime="20190915 22:50:39.886"></status>
+</kw>
+<kw name="${INDEX} = 9" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.886" level="INFO">9</msg>
+<status status="PASS" starttime="20190915 22:50:39.886" endtime="20190915 22:50:39.886"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//h3[a[contains(text(),"iPhone 8 64GB")]]/following-sibling::ul/li/span[@class="bold"])[${INDEX}]</arg>
+</arguments>
+<assign>
+<var>${lintext}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.935" level="INFO">${lintext} = RM 1,610.96</msg>
+<status status="PASS" starttime="20190915 22:50:39.886" endtime="20190915 22:50:39.935"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${lintext}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.935" level="INFO">RM 1,610.96</msg>
+<status status="PASS" starttime="20190915 22:50:39.935" endtime="20190915 22:50:39.935"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${lintext}</arg>
+<arg>RM</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.935" level="INFO">${str} =  1610.96</msg>
+<status status="PASS" starttime="20190915 22:50:39.935" endtime="20190915 22:50:39.935"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${str}</arg>
+<arg>' '</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.935" level="INFO">${string} =  1610.96</msg>
+<status status="PASS" starttime="20190915 22:50:39.935" endtime="20190915 22:50:39.935"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>type($string)</arg>
+</arguments>
+<assign>
+<var>${type_name}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.939" level="INFO">${type_name} = &lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20190915 22:50:39.935" endtime="20190915 22:50:39.939"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${string}</arg>
+</arguments>
+<assign>
+<var>${int_value}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.939" level="INFO">${int_value} = 1610.96</msg>
+<status status="PASS" starttime="20190915 22:50:39.939" endtime="20190915 22:50:39.939"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+<arg>${int_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.939" endtime="20190915 22:50:39.939"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.886" endtime="20190915 22:50:39.939"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.484" endtime="20190915 22:50:39.939"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${iphoneItems}</arg>
+</arguments>
+<assign>
+<var>${LinkSize}</var>
+</assign>
+<msg timestamp="20190915 22:50:39.939" level="INFO">Length is 9</msg>
+<msg timestamp="20190915 22:50:39.939" level="INFO">${LinkSize} = 9</msg>
+<status status="PASS" starttime="20190915 22:50:39.939" endtime="20190915 22:50:39.939"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LinkSize}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.942" level="INFO">9</msg>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Print all linkss</arg>
+</arguments>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<kw name="${ELEMENT} IN [ @{iphoneItems} ]" type="for">
+<kw name="${ELEMENT} = 1657.12" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.942" level="INFO">1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<kw name="${ELEMENT} = 1657.12" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.942" level="INFO">1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<kw name="${ELEMENT} = 1657.12" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.942" level="INFO">1657.12</msg>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<kw name="${ELEMENT} = 1703.28" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.942" level="INFO">1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.942"></status>
+</kw>
+<kw name="${ELEMENT} = 1729.51" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.946" level="INFO">1729.51</msg>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<kw name="${ELEMENT} = 1809.14" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.946" level="INFO">1809.14</msg>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<kw name="${ELEMENT} = 1452.53" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.946" level="INFO">1452.53</msg>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<kw name="${ELEMENT} = 1703.28" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.946" level="INFO">1703.28</msg>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<kw name="${ELEMENT} = 1610.96" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20190915 22:50:39.946" level="INFO">1610.96</msg>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.946" endtime="20190915 22:50:39.946"></status>
+</kw>
+<status status="PASS" starttime="20190915 22:50:39.942" endtime="20190915 22:50:39.946"></status>
+</kw>
+<doc>This test is to get the iphone8 price from amazon.</doc>
+<tags>
+<tag>ebay</tag>
+<tag>medium</tag>
+</tags>
+<status status="PASS" starttime="20190915 22:50:11.182" endtime="20190915 22:50:39.946" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190915 22:50:10.866" endtime="20190915 22:50:39.950"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">ebay</stat>
+<stat pass="1" fail="0">medium</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="001 Testcase">001 Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
